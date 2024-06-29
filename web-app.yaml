@@ -15,10 +15,6 @@ spec:
       containers:
       - name: mongo-express
         image: mongo-express:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8081
         env:
@@ -37,7 +33,6 @@ spec:
             configMapKeyRef:
               name: mongo-config
               key: mongo-url
-
 ---
 apiVersion: v1
 kind: Service
